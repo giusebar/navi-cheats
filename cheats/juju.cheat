@@ -1,0 +1,19 @@
+% juju
+
+# ssh directly in container k8s pod:
+juju ssh --container <APP_NAME> <UNIT_NAME>
+
+# Refresh image of a charm
+juju refresh <APP_NAME> --resource <RESOURCE_NAME>=<OCI_IMAGE_LINK>
+
+# Open port with juju (should also open it on openstack)
+juju run --unit <UNIT_NAME> "open-port <PORT>"
+
+# Run action
+juju run-action <UNIT_NAME> <ACTION_NAME>
+
+# List actions
+juju actions <APP_NAME>
+
+# Replay logs of a unit
+juju debug-log --replay --include unit-cos-registration-server-0 --no-tail`

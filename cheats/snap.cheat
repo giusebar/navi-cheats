@@ -1,0 +1,21 @@
+% snap
+
+# List channels of <SNAP>
+snap info <SNAP>
+
+# Upgrade to a particular channel of <SNAP>
+sudo snap refresh <SNAP> --channel=<CHANNEL>
+
+# Get tail logs for <SNAP>
+snap logs <SNAP> -f
+
+# Get last 100 line logs for <SNAP>
+snap logs -n 100 <SNAP>
+
+# Export snapcraft secrets for github
+snapcraft export-login --acls package_access,package_push,package_update,package_release exported.txt
+
+# Upload <SNAP>
+snapcraft upload --release=<RELEASE_CHANNEL> <SNAP>
+
+$ CHANNEL: snap info ${SNAP} | grep -A9999 -e '^channels:' | grep -ve '^channels:\|^installed:' | awk '{print $1}' | grep -oe '[^ :]*'

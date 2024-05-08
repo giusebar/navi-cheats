@@ -1,0 +1,13 @@
+% openstack
+
+# Open tcp port by add port rule to security group:
+openstack security group rule create --protocol tcp --dst-port <PORT>:<PORT> --remote-ip 0.0.0.0/0 <SECURITY_GROUP>
+  
+# List openstack servers
+openstack server list
+
+# Show server details
+openstack server show <SERVER_ID>
+
+# Show security group details
+openstack security group show <SECURITY_GROUP>

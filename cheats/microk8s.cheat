@@ -1,0 +1,16 @@
+% microk8s
+
+# Get description of a pod, including the resource sha
+sudo microk8s.kubectl describe pods <POD_NAME> -n <NAMESPACE>
+
+# Get pods list
+sudo microk8s.kubectl get pods -n <NAMESPACE>
+
+# Delete pod
+sudo microk8s.kubectl delete pod <POD_NAME> -n <NAMESPACE>
+
+# Get logs from container pod:
+sudo microk8s.kubectl logs <POD_UNIT_NAME> --container <CONTAINER_NAME> -n <NAMESPACE>
+
+# ssh into a pod:
+kubectl exec -n <NAMESPACE> --stdin --tty <POD_UNIT_NAME> -- /bin/bash`

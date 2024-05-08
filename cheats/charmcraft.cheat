@@ -1,0 +1,16 @@
+% chamcraft
+
+# Upload a charm
+CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1 charmcraft upload <CHARM>
+
+# Release a charm
+CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1 charmcraft release <CHARM> --revision=<REVISION_NUMBER> --channel=<CHANNEL>
+
+# Charm revision
+CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1 charmcraft revisions <CHARM>
+
+# Upload a charm resource
+CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1 charmcraft upload-resource <CHARM> <RESOURCE> --image=<IMAGE_SHA>
+
+# Release charm with attached resource
+CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1 charmcraft release <CHARM> --revision=<REVISION_NUMBER> --channel=<CHANNEL> --resource=<RESOURCE>:<REVISION>
